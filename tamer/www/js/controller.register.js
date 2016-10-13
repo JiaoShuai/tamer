@@ -57,7 +57,9 @@ function RegisterCtrl($scope, $state, DUA, $ionicPopup) {
             }
         }, 1000);
         function ok(result) {
-            $ionicPopup.alert("验证码已发送，一分钟之内有效");
+            $ionicPopup.alert({
+                template: "验证码已发送，一分钟之内有效"
+            });
 
         }
         function err(reason) {
