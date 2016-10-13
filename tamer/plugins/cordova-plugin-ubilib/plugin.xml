@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="cordova-plugin-ubilib"
+    version="0.0.1">
+    <name>Cordova ubilib plugin</name>
+    <description>Native interface to ubicomputing math for PhoneGap/Cordova. Allows you to use more feature functions.</description>
+    <author>lovearth studio</author>
+    <license>MIT</license>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <js-module src="www/UbilibPlugin.js" name="UbilibPlugin">
+        <clobbers target="UbilibPlugin" />
+    </js-module>
+    <platform name="android">
+        <source-file src="src/android/UbilibPlugin.java" target-dir="src/com/ydcun/ivita/util" />
+		<source-file src="src/android/utils/Features.java" target-dir="src/com/ydcun/ivita/util" />
+		<source-file src="src/android/utils/Complex.java" target-dir="src/com/ydcun/ivita/util" />
+		<source-file src="src/android/utils/FFT.java" target-dir="src/com/ydcun/ivita/util" />
+		<source-file src="src/android/utils/Filters.java" target-dir="src/com/ydcun/ivita/util" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="UbilibPlugin">
+                <param name="android-package" value="com.ydcun.ivita.util.UbilibPlugin"/>
+            </feature>
+        </config-file>
+    </platform>
+</plugin>

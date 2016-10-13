@@ -1,0 +1,36 @@
+﻿<meta charset="utf-8">
+<ion-view view-title="注册APP" hide-nav-bar=false>
+    <ion-nav-bar class="bar-dark" align-title="center">
+        <ion-nav-buttons side="left">
+            <button class="button icon button-clear ion-chevron-left" ng-click="goBack()"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button icon button-clear ion-upload" ng-click="getHelp()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content scroll="false">
+        <ion-list class="list">
+            <ion-item class="item item-input">
+                <span class="input-label">应用名</span>
+                <input type="text" placeholder="爱蓝新闻" ng-model="regApp.title">
+            </ion-item>
+
+            <ion-item class="item item-input">
+                <span class="input-label">应用类型</span>
+                <!--ng-model这个地方要用object.var的方式接收,用var接收不好-->
+                <select ng-options="mcato as mcato.name for mcato in mcatos" ng-model="selectedCato.mcato" ng-change="update()">
+                </select>
+                <select ng-options="scato as scato.name for scato in scatos" ng-model="selectedCato.scato">
+                </select>
+            </ion-item>
+            <ion-item class="item item-input" ng-style="{'min-height':'250px'}">
+                <span class="input-label">应用描述</span>
+                <textarea placeholder="Comments" rows="8" ng-model="regApp.brief"></textarea>
+            </ion-item>
+
+        </ion-list>
+        <button class="button button-full button-energized" ng-click="register()">提交并获取AppKey</button>
+        <div>By creating an account you agree to our <a class="special" href="#" target="_blank" role="link">Terms & Privacy</a></div>
+        <div ng-bind="regResult"></div>
+    </ion-content>
+</ion-view>

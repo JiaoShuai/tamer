@@ -1,0 +1,40 @@
+﻿<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{subject.name}}">
+  <ion-content>
+      <ion-list>
+          <ion-item class="item item-input item-icon-left">
+              <span class="input-label">姓名：</span>
+              <input type="text" ng-model="subject.data.name" style="text-align:center;border:1px solid gray">
+          </ion-item>
+          <ion-item class="item item-input">
+              <span class="input-label">性别</span>
+              <ion-radio ng-model="subject.data.sex" ng-value="'M'">男</ion-radio>
+              <ion-radio ng-model="subject.data.sex" ng-value="'F'">女</ion-radio>
+          </ion-item>
+          <ion-item class="item item-input range">
+              <span class="input-label">年龄：{{subject.data.age}}</span>
+              <input type="range" name="volume" min=0 max=100 ng-model="subject.data.age">
+          </ion-item>
+          <ion-item class="item item-input range" >
+              <span class="input-label">身高: {{subject.data.height| number : 0}}cm</span>
+              <input type="range" name="volume" min=50 max=200 ng-model="subject.data.height">
+          </ion-item>
+          <ion-item class="item item-input range">
+              <span class="input-label">体重: {{subject.data.weight| number : 0}}kg</span>
+              <input type="range" name="volume" min=20 max=200 ng-model="subject.data.weight">
+          </ion-item>
+          <div class="padding">
+              <button class="button button-block button-positive " ng-click="save(subject)">
+                  保存
+              </button>
+           </div>
+
+</ion-list>
+
+  </ion-content>
+</ion-view>

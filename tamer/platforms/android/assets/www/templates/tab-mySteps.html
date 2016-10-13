@@ -1,0 +1,36 @@
+﻿<ion-view view-title="识别记录">
+    <ion-nav-bar class="bar-dark" align-title="center">
+        <!--<ion-nav-buttons side="left">
+            <button class="button icon button-clear ion-chevron-left" ng-click="back()"></button>
+        </ion-nav-buttons>-->
+        <!--<ion-nav-buttons side="right">
+            <button class="button icon button-clear ion-gear-a" ng-click="test()"></button>
+        </ion-nav-buttons>-->
+    </ion-nav-bar>
+    <ion-content delegate-handle="mainScroll" overflow-scroll="true" scrollbar-y="false">
+        <ion-toggle ng-model="isOn" ng-change="onSwitchChange()">
+            开始计步
+        </ion-toggle>
+        <p ng-bind="tag()"></p><!--这个地方用来显示调试信息，未来要注释掉-->
+        <ion-list>
+            <!--<ion-item ng-if="mode()==0" ng-style="{'background-color':'green'}">
+
+            </ion-item>-->
+            <div  ng-repeat="rec in recs">
+                <!--<ion-item class="item-avatar item-icon-right" ng-style="{'background-color':rec.mode==0?'rgba(255,255,255,0.2)':'rgba(127,127,127,0.2)'}">
+                    <img ng-src="{{rec.act==0?'img/ar/standstill.jpg':rec.act==1?'img/ar/walk.jpg':'img/ar/run.jpg'}}">
+                    <h2>{{rec.actName}} @{{rec.positionName}} t{{rec.lot}}</h2>
+                    <p>m:{{rec.fm}} std：{{rec.fstd}} SPP:{{rec.fspp}} MCR:{{rec.fmcr}}</p>
+                </ion-item>-->
+                <ion-item class="item item-remove-animate" ng-style="{'background-color':rec.mode==0?'rgba(255,255,255,0.2)':'rgba(127,127,127,0.2)'}">
+                    <div class="row"style="height:32px">
+                        <div class="col" style="height:32px">{{rec.actName}}</div>
+                        <div class="col" style="height:32px">{{rec.positionName}}</div>
+                        <div class="col" style="height:32px">{{rec.lot}}</div>
+                    </div>                           
+                </ion-item>
+            </div>
+
+        </ion-list>
+    </ion-content>
+</ion-view>

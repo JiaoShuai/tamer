@@ -1,0 +1,22 @@
+﻿<meta charset="utf-8">
+<ion-view view-title="测试对象">
+    <ion-nav-bar class="bar-dark" align-title="center">
+        <!--<ion-nav-buttons side="left">
+            <button class="button icon button-clear ion-chevron-left" ng-click="back()"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button icon  ion-person-add" ng-click="goAddSubject()"></button>
+        </ion-nav-buttons>-->
+    </ion-nav-bar>
+
+  <ion-content>
+    <ion-list>
+        <ion-radio ng-repeat="subject in subjects"
+                   ng-value="subject"
+                   ng-change="select(subject)"
+                   ng-model="curRadio.selectedSubject">
+            {{subject.data.name}}
+        </ion-radio>
+    </ion-list>
+  </ion-content>
+</ion-view>

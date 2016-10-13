@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.lovearthstudio.applist" version="0.0.1">
+  <name>Cordova Plugin AppList</name>
+  <description>Get installed app list and  app stats</description>
+  <author>Yi Mingyu</author>
+  <license>Apache 2.0 License</license>
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+  <js-module src="www/AppList.js" name="AppList">
+    <clobbers target="AppList" />
+  </js-module>
+  <platform name="android">
+    <source-file src="src/android/AppList.java"  target-dir="src/com/lovearthstudio/applist" />
+    <source-file src="src/android/AppStats.java" target-dir="src/com/lovearthstudio/applist" />
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AppList">
+        <param name="android-package" value="com.lovearthstudio.applist.AppList"/>
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    </config-file>
+  </platform>
+</plugin>

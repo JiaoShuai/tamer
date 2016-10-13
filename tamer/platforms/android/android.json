@@ -1,0 +1,326 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"AppList\"><param name=\"android-package\" value=\"com.lovearthstudio.applist.AppList\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Cells\"><param name=\"android-package\" value=\"com.lovearthstudio.cells.Cells\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NativeSettings\"><param name=\"android-package\" value=\"com.phonegap.plugins.nativesettings.NativeSettings\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"WifiWizard\"><param name=\"android-package\" value=\"com.pylonproducts.wifiwizard.WifiWizard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AppVersion\"><param name=\"android-package\" value=\"uk.co.whiteoctober.cordova.AppVersion\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Accelerometer\"><param name=\"android-package\" value=\"org.apache.cordova.devicemotion.AccelListener\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"UbilibPlugin\"><param name=\"android-package\" value=\"com.ydcun.ivita.util.UbilibPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SQLitePlugin\"><param name=\"android-package\" value=\"io.sqlc.SQLitePlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ],
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"BLE\"><param name=\"android-package\" value=\"com.megster.cordova.ble.central.BLECentralPlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.PACKAGE_USAGE_STATS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_UPDATES\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.lovearthstudio.applist": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "com.lovearthstudio.cells": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "com.phonegap.plugins.nativesettingsopener": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "com.pylonproducts.wifiwizard": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-plugin-ble-central": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-plugin-ubilib": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.lovearthstudio.tamer"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/com.lovearthstudio.applist/www/AppList.js",
+            "id": "com.lovearthstudio.applist.AppList",
+            "pluginId": "com.lovearthstudio.applist",
+            "clobbers": [
+                "AppList"
+            ]
+        },
+        {
+            "file": "plugins/com.lovearthstudio.cells/www/cells.js",
+            "id": "com.lovearthstudio.cells.cells",
+            "pluginId": "com.lovearthstudio.cells",
+            "clobbers": [
+                "Cells"
+            ]
+        },
+        {
+            "file": "plugins/com.phonegap.plugins.nativesettingsopener/www/settings.js",
+            "id": "com.phonegap.plugins.nativesettingsopener.Settings",
+            "pluginId": "com.phonegap.plugins.nativesettingsopener",
+            "clobbers": [
+                "cordova.plugins.settings"
+            ]
+        },
+        {
+            "file": "plugins/com.pylonproducts.wifiwizard/www/WifiWizard.js",
+            "id": "com.pylonproducts.wifiwizard.WifiWizard",
+            "pluginId": "com.pylonproducts.wifiwizard",
+            "clobbers": [
+                "window.WifiWizard"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+            "id": "cordova-plugin-app-version.AppVersionPlugin",
+            "pluginId": "cordova-plugin-app-version",
+            "clobbers": [
+                "cordova.getAppVersion"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-ble-central/www/ble.js",
+            "id": "cordova-plugin-ble-central.ble",
+            "pluginId": "cordova-plugin-ble-central",
+            "clobbers": [
+                "ble"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-motion/www/Acceleration.js",
+            "id": "cordova-plugin-device-motion.Acceleration",
+            "pluginId": "cordova-plugin-device-motion",
+            "clobbers": [
+                "Acceleration"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-motion/www/accelerometer.js",
+            "id": "cordova-plugin-device-motion.accelerometer",
+            "pluginId": "cordova-plugin-device-motion",
+            "clobbers": [
+                "navigator.accelerometer"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+            "id": "cordova-plugin-geolocation.geolocation",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "navigator.geolocation"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+            "id": "cordova-plugin-geolocation.PositionError",
+            "pluginId": "cordova-plugin-geolocation",
+            "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "id": "cordova-plugin-network-information.network",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "navigator.connection",
+                "navigator.network.connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "id": "cordova-plugin-network-information.Connection",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "Connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-ubilib/www/UbilibPlugin.js",
+            "id": "cordova-plugin-ubilib.UbilibPlugin",
+            "pluginId": "cordova-plugin-ubilib",
+            "clobbers": [
+                "UbilibPlugin"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+            "id": "cordova-plugin-whitelist.whitelist",
+            "pluginId": "cordova-plugin-whitelist",
+            "runs": true
+        },
+        {
+            "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+            "id": "cordova-sqlite-storage.SQLitePlugin",
+            "pluginId": "cordova-sqlite-storage",
+            "clobbers": [
+                "SQLitePlugin"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "com.lovearthstudio.applist": "0.0.1",
+        "com.lovearthstudio.cells": "0.0.1",
+        "com.phonegap.plugins.nativesettingsopener": "1.0",
+        "com.pylonproducts.wifiwizard": "0.2.11",
+        "cordova-plugin-app-version": "0.1.8",
+        "cordova-plugin-ble-central": "1.0.4",
+        "cordova-plugin-device": "1.1.1",
+        "cordova-plugin-device-motion": "1.2.0",
+        "cordova-plugin-geolocation": "2.1.0",
+        "cordova-plugin-network-information": "1.2.0",
+        "cordova-plugin-splashscreen": "3.1.0",
+        "cordova-plugin-ubilib": "0.0.1",
+        "cordova-plugin-whitelist": "1.2.1",
+        "cordova-sqlite-storage": "0.8.4-dev"
+    }
+}

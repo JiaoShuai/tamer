@@ -1,0 +1,55 @@
+﻿<meta charset="utf-8">
+<ion-view view-title="注册" hide-nav-bar=false>
+    <ion-header-bar>
+        <button class="button button-positive button-clear no-animation"
+                side="left" ng-click="modalBack()">
+            返回
+        </button>
+        <h1 class="title" side="center">注册</h1>
+        <button class="button button-positive button-clear no-animation"
+                side="right" ng-click="openLoginModal()">
+            登陆
+        </button>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <ion-list class="list">
+            <ion-item class="item item-input">
+                <span class="input-label">电话（+86）</span>
+                <input type="text"   value="15810419011"    ng-model="regUser.tel">
+            </ion-item>
+            <ion-item class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="number" placeholder="6位短信验证码" ng-model="regUser.vfcode">
+                </label>
+                <button class="button button-balanced" ng-click="getVfCode()" ng-disabled="promise.pending">{{promise.text}}</button>
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">设置密码</span>
+                <input type="password" placeholder="Password" value="123abc"  ng-model="regUser.pwd">
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">确认密码</span>
+                <input type="password" placeholder="RePassword"  value="123abc" ng-model="regUser.pwd2">
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">性别</span>
+                <!--<ion-radio ng-model="regUser.sex" ng-value="'M'">男</ion-radio>
+                <ion-radio ng-model="regUser.sex" ng-value="'F'">女</ion-radio>-->
+                <ion-radio ng-repeat="sex in sexes" ng-value="sex.value" ng-model="regUser.sex">{{ sex.text }} </ion-radio>
+            </ion-item>
+            <ion-item class="item item-input item-select">
+                <span class="input-label">生日</span>
+                <input type="date" ng-model="regUser.birthday">
+            </ion-item>
+            <!--<ion-item class="item item-input item-select">
+                <span class="input-label">邀请码</span>
+                <input type="text" ng-model="regUser.incode">
+            </ion-item>-->
+            <ion-item class="item padding">
+                <button class="button button-block button-energized" ng-click="register()">注册</button>
+
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

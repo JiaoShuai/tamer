@@ -1,0 +1,56 @@
+﻿<meta charset="utf-8">
+<ion-view view-title="训练">
+    <ion-nav-bar class="bar-dark" align-title="center">
+        <ion-nav-buttons side="right">
+            <button class="button icon button-clear ion-location" ng-click="updateGps()" ng-show="false"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content scroll="false">
+        <ion-list class="list">
+            <ion-item class="item item-icon-left" ng-class="{active: showInfo}">
+                <i class="icon" ng-class="showInfo ? 'ion-minus' : 'ion-navicon'" ng-click="toggleInfo()"></i>
+                <i class="icon icon-pserson"></i>
+                <select ng-options="subject.data as subject.name for subject in subjects" ng-model="trainUser.data"></select>
+            </ion-item>
+
+            <div ng-show="showInfo">
+                <ion-item class="item ">
+                    姓名：{{trainUser.data.name}}
+                </ion-item>
+                <ion-item class="item ">
+                    性别： {{trainUser.data.sex == 'M'?'男':'女'}}
+                </ion-item>
+                <ion-item class="item ">
+                    年龄：{{trainUser.data.age}}
+                </ion-item>
+                <ion-item class="item ">
+                    身高：{{trainUser.data.height}}cm
+                </ion-item>
+                <ion-item class="item ">
+                    体重：{{trainUser.data.weight}}kg
+                </ion-item>
+            </div>
+
+            <ion-item class="item item-input">
+                <span class="input-label">行为：</span>
+                <select ng-options="state.id as state.name for state in states" ng-model="curState.id"></select>
+                @
+                <select ng-options="position.id as position.name for position in positions" ng-model="curPosition.id"></select>
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">采样次数：</span>
+                <input type="number" placeholder="10" ng-model="settings.time4seconds" style="text-align:center;border:1px solid gray">
+            </ion-item>
+
+            <ion-itm class="item item-input item-text-wrap" ng-show="false">
+                 <span style="font-size:small">LON:{{location.lon}}&nbsp;&nbsp;&nbsp;LAT:{{location.lat}}&nbsp;&nbsp;&nbsp;ACC:{{location.acc}}&nbsp;&nbsp;&nbsp;时间：{{location.timeStr}}</span>  
+            </ion-itm>
+
+            <ion-toggle ng-model="switch.isOn" ng-change="onSwitchChange()" toggle-class="toggle-calm">
+                开始采样({{settings.delay}}秒后开始)
+            </ion-toggle>
+            <p ng-bind="result" ng-style="{color:'green'}"></p>
+            <p ng-bind="error" ng-style="{color:'red'}"></p>
+        </ion-list>
+    </ion-content>
+</ion-view>

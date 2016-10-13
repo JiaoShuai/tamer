@@ -1,0 +1,23 @@
+/* Empty. Add your own CSS if you like */
+/*这个属性放在io-content上，使得ion-content离bottom远一点*/
+.has-footer.has-tabs {
+  bottom: 93px;
+}
+/*这个属性放在io-content上，使得sub-footer里面有50px,给tabs让出位置*/
+.sub-footer{
+bottom:50px !important;
+}
+span.stars, span.stars span {
+    display: block;
+    background: url(../img/stars.png) 0 -16px repeat-x;
+    width: 160px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}
+
+.alignright {
+  float:right;
+}

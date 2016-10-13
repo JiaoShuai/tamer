@@ -1,0 +1,46 @@
+﻿<ion-view view-title="{{user.name}}">
+    <ion-nav-bar class="bar-dark">
+        <ion-nav-buttons side="left">
+            <button class="button icon button-clear ion-chevron-left" ng-click="back()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content scroll="false">
+        <ion-list>
+            <ion-item class="item item-input item-icon-left">
+                <span class="input-label">姓名：</span>
+                <input type="text" ng-model="user.name" style="text-align:center;border:1px solid gray">
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">性别</span>
+                <ion-radio ng-model="user.sex" ng-value="'M'">男</ion-radio>
+                <ion-radio ng-model="user.sex" ng-value="'F'">女</ion-radio>
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">生日</span>
+                <input type="date" ng-model="input.birthday">
+            </ion-item>
+
+            <ion-item class="item item-input range ">
+                <span class="input-label">身高: {{user.height| number : 0}}cm</span>
+                <input type="range" name="volume" min=50 max=200 ng-model="user.height">
+            </ion-item>
+            <ion-item class="item item-input range ">
+                <span class="input-label">体重: {{user.weight| number : 0}}kg</span>
+                <input type="range" name="volume" min=20 max=200 ng-model="user.weight">
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">电话:+86-</span>
+                <input type="text" name="tel" ng-model="user.tel">
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">邮箱:</span>
+                <input type="text" name="email" ng-model="user.email">
+            </ion-item>
+            <button class="button button-block button-positive" ng-click="save()">
+                保存
+            </button>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>

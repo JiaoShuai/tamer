@@ -1,0 +1,40 @@
+﻿<meta charset="utf-8">
+<ion-view view-title="测试对象">
+    <ion-nav-bar class="bar-dark" align-title="center">
+        <ion-nav-buttons side="left">
+            <button class="button icon button-clear ion-chevron-left" ng-click="back()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+  <ion-content>
+    <ion-list>
+        <ion-radio ng-repeat="role in roles"
+                   ng-value ="role"
+                   ng-change="select(role)"
+                   ng-model="curRadio.selectedRole">
+            {{role.name}}
+        </ion-radio>
+        <!--<ion-item class="item-radio ng-model="user.role">
+            <input type="radio" name="group">
+            <div class="item-content">
+               Root
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </ion-item>
+        <ion-item class="item-radio ">
+            <input type="radio" name="group">
+            <div class="item-content">
+                Admin
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </ion-item>
+        <ion-item class="item-radio ">
+            <input type="radio" name="group">
+            <div class="item-content">
+                Select
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </ion-item>-->
+    </ion-list>
+  </ion-content>
+</ion-view>

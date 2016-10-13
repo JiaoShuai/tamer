@@ -1,0 +1,177 @@
+﻿<meta charset="utf-8">
+<ion-view view-title="特征记录">
+    <ion-nav-bar class="bar-dark" align-title="center">
+        <ion-nav-buttons side="right">
+            <button class="button icon button-clear ion-social-youtube-outline" ng-click="analysis()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-list class="list">
+            <ion-item class=" item-icon-left item-icon-right" href="#/selectSubject">
+                <i class="icon ion-person"></i>
+                {{selectedSubject.data.name}}
+                <i class="icon  ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <div class="list" ng-show="score.dataGot">
+                <div class="card" ng-show="score.walkGot&&score.runGot">
+                    <ion-item>
+                        总排名:{{percentageToStars(score.maps.all_map.all_percentage)/10 | number : 1}}
+                        <span class="stars alignright">
+                            <span ng-style="{ 'width': percentageToStars(score.maps.all_map.all_percentage)+'%'}"></span>
+                        </span>
+                    </ion-item>
+
+                    <ion-item>
+                        附近排名:{{percentageToStars(score.maps.park_map.all_percentage)/10 | number : 1}}
+                        <span class="stars alignright">
+                            <span ng-style="{ 'width': percentageToStars(score.maps.park_map.all_percentage)+'%'}"></span>
+                        </span>
+                    </ion-item>
+
+                    <ion-item>
+                        同龄排名:{{percentageToStars(score.maps.all_age_map.all_percentage)/10 | number : 1}}
+                        <span class="stars alignright">
+                            <span ng-style="{ 'width': percentageToStars(score.maps.all_age_map.all_percentage)+'%' }"></span>
+                        </span>
+                    </ion-item>
+                </div>
+                <div class="card list" ng-show="score.walkGot">
+                    <div class="item item-image">
+                        <img src="img/ar/walking.jpg">
+                    </div>
+                    <div class="card">
+                        <h4>走路所有人排名(<font color="red">{{score.maps.all_map.Walking_amount}}</font>)</h4>
+                        <ion-item>
+                            走路能量:{{percentageToStars(score.maps.all_map.Walking_energy_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_map.Walking_energy_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            走路快慢:{{percentageToStars(score.maps.all_map.Walking_stability_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_map.Walking_stability_percentage)+'%'}"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            走路排名:{{percentageToStars(score.maps.all_map.Walking_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_map.Walking_percentage)+'%'}"></span>
+                            </span>
+                        </ion-item>
+                    </div>
+                    <div class="card">
+                        <h4>附近(走路<font color="red">{{score.maps.park_map.Walking_amount}}</font>人)排名</h4>
+                        <ion-item>
+                            走路能量:{{percentageToStars(score.maps.park_map.Walking_energy_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.park_map.Walking_energy_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            走路快慢:{{percentageToStars(score.maps.park_map.Walking_stability_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.park_map.Walking_stability_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            走路排名:{{percentageToStars(score.maps.park_map.Walking_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.park_map.Walking_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                    </div>
+                    <div class="card">
+                        <h4>年龄段(<font color="red">{{score.maps.all_age_map.range}}</font>)走路<font color="red">{{score.maps.all_age_map.Walking_amount}}</font>人</h4>
+                        <ion-item>
+                            走路能量:{{percentageToStars(score.maps.all_age_map.Walking_energy_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_age_map.Walking_energy_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            走路快慢:{{percentageToStars(score.maps.all_age_map.Walking_stability_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_age_map.Walking_stability_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            走路排名:{{percentageToStars(score.maps.all_age_map.Walking_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_age_map.Walking_percentage)+'%'}"></span>
+                            </span>
+                        </ion-item>
+                    </div>
+                </div>
+                <div class="card list" ng-show="score.runGot">
+                    <div class="item item-image">
+                        <img src="img/ar/running.jpg">
+                    </div>
+                    <div class="card">
+                        <h4>跑步所有人排名(<font color="red">{{score.maps.all_map.Running_amount}}</font>人)</h4>
+                        <ion-item>
+                            跑步能量:{{percentageToStars(score.maps.all_map.Running_energy_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_map.Running_energy_percentage)+'%'}"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            跑步快慢:{{percentageToStars(score.maps.all_map.Running_stability_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_map.Running_stability_percentage)+'%'}"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            跑步排名:{{percentageToStars(score.maps.all_map.Running_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_map.Running_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                    </div>
+                    <div class="card">
+                        <h4>附近(跑步<font color="red">{{score.maps.park_map.Running_amount}}</font>人)</h4>
+                        <ion-item>
+                            跑步能量:{{percentageToStars(score.maps.park_map.Running_energy_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.park_map.Running_energy_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            跑步快慢:{{percentageToStars(score.maps.park_map.Running_stability_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.park_map.Running_stability_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            跑步排名:{{percentageToStars(score.maps.park_map.Running_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.park_map.Running_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                    </div>
+                    <div class="card">
+                        <h4>年龄段(<font color="red">{{score.maps.all_age_map.range}}</font>)跑步<font color="red">{{score.maps.all_age_map.Running_amount}}</font>人</h4>
+                        <ion-item>
+                            跑步能量:{{percentageToStars(score.maps.all_age_map.Running_energy_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_age_map.Running_energy_percentage)+'%'}"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            跑步快慢:{{percentageToStars(score.maps.all_age_map.Running_stability_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_age_map.Running_stability_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                        <ion-item>
+                            跑步排名:{{percentageToStars(score.maps.all_age_map.Running_percentage)/10 | number : 1}}
+                            <span class="stars alignright">
+                                <span ng-style="{ 'width': percentageToStars(score.maps.all_age_map.Running_percentage)+'%' }"></span>
+                            </span>
+                        </ion-item>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

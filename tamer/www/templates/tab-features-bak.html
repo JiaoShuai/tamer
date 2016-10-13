@@ -1,0 +1,51 @@
+﻿<meta charset="utf-8">
+<ion-view view-title="特征记录">
+    <ion-nav-bar class="bar-dark" align-title="center">
+        <ion-nav-buttons side="right">
+            <button class="button icon button-clear ion-social-youtube-outline" ng-click="analysis()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-list class="list">
+            <ion-item class=" item-icon-left item-icon-right" href="#/selectSubject">
+                <i class="icon ion-person"></i>
+                {{selectedSubject.name}}
+                <i class="icon  ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <div class="list card" ng-show="score.dataGot">
+                <h3>您在{{score.park}}地区的排名：</h3>
+                <div class="card">
+                    <ion-item ng-repeat="(key, value) in score.maps.park_map">
+                        {{names[key]}}
+                        {{value}}
+                    </ion-item>
+                </div>
+                <h3>您在{{score.age}}年龄段的排名：</h3>
+                <div class="card">
+                    <ion-item ng-repeat="(key, value) in score.maps.all_age_map">
+                        {{names[key]}}
+                        {{value}}
+                    </ion-item>
+                </div>
+
+                <h3>您的总排名：</h3>
+                <div class="card">
+                    <ion-item ng-repeat="(key, value) in score.maps.all_map">
+                        {{names[key]}}
+                        {{value}}
+                    </ion-item>
+                </div>
+            </div>
+
+            <!--<div class="item item-image">
+                <img src="img/ar/walk.jpg">
+            </div>
+            <ion-item ng-repeat="rating in ratings">
+                {{rating.name}}
+                <span class="stars alignright">
+                    <span ng-style="{ 'width': getStars(rating.number) }"></span>
+                </span>
+            </ion-item>-->
+        </ion-list>
+    </ion-content>
+</ion-view>

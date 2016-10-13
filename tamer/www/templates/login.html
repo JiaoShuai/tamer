@@ -1,0 +1,42 @@
+﻿
+<ion-view view-title="登陆">
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="goRegister()">注册</button>
+    </ion-nav-buttons>
+    <ion-content scroll="false">
+        <ion-list >
+            <ion-item class=" item-icon-left item-icon-right"  href="#/selectRole">
+                <i class="icon ion-ribbon-b"></i>
+                {{selectedRole.name}}
+                <!--<span class="item-note">
+                    选择身份
+                </span>-->
+                <i class="icon  ion-chevron-right icon-accessory"></i>
+                <!--<span>角色</span>
+                <select ng-options="role as role for role in roles" ng-model="loginUser.role"></select>-->
+            </ion-item>
+            <ion-item class="item-input item-icon-left">
+                <i class="input-label icon ion-ios-telephone"></i>
+                <span class="input-label"></span>
+                <input type="text" placeholder="11位电话号码" ng-model="loginUser.tel">  
+            </ion-item>
+            <ion-item class="item item-input item-icon-left">
+                <i class="icon ion-key"></i>
+                <span class="input-label"></span>
+                <input type="password" placeholder="密码" ng-model="loginUser.pwd">
+            </ion-item>
+        </ion-list>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="login(user)" ng-disabled="loginButtonDisabled">
+                    登陆
+            </button>
+            <p class="text-center">
+                <a href="#/forgot-password">忘记密码</a>
+            </p>
+        </div>
+
+        <div class="padding" style="margin:0 auto; text-align:center">
+            <img src="img/lovearthstudiologo.png" style="border-radius:16px;width:200px;" />
+        </div>
+    </ion-content>
+</ion-view>

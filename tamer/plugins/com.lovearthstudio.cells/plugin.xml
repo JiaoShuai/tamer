@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+  id="com.lovearthstudio.cells"
+    version="0.0.1">
+  <name>Codova Plugin Cells</name>
+  <description>Cordova Cells Plugin</description>
+  <author>Yi Mingyu</author>
+  <license>Apache 2.0 License</license>
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+  <js-module src="www/cells.js" name="cells">
+    <clobbers target="Cells" />
+  </js-module>
+  <platform name="android">
+    <source-file src="src/android/Cells.java" target-dir="src/com/lovearthstudio/cells" />
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Cells">
+        <param name="android-package" value="com.lovearthstudio.cells.Cells"/>
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+      <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+      <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES"></uses-permission>
+    </config-file>
+  </platform>
+</plugin>

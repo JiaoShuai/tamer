@@ -1,0 +1,60 @@
+﻿<ion-view view-title="我">
+    <ion-nav-bar class="bar-dark" align-title="center">
+    </ion-nav-bar>
+    <ion-content scroll="false">
+        <!--<div class="list profile-name">
+            <label class="item item-input">
+                <input ng-model="data.name" on-return="updateName()" type="text" placeholder="Your name">
+            </label>
+        </div>-->
+        <!--带有icon的list，可以通过i标签添加icon到item中，通过item-icon-left或item-icon-right指定icon在左边还是右边。下面的例子中使用a或button标签做每个item，主要是为了让这每个item可以tappable，还有一个特点是当没有添加任何icon时，会自动在右边添加一个小的向右的箭头图标。直接看例子：-->
+        <!--扩展图标(accessory icon)称为扩展指示器(disclosure indicator),告知将切换到另一个视图,它以一个灰色箭头表示.-->
+        <!--我们发现如果要在ion-item中显示两个图标，左边是图标，右边是箭头，需要在ion-item的class里写-item-icon-lfet和right-->
+        <ion-list>
+            <ion-item class="item-thumbnail-left item-icon-right" ng-style="{'min-height':'100px'}"  href="#/editProfile" ng-show="false">
+                <img ng-src="img/avatar/man.jpg" style="width:100%;height:100%">
+                <h2>{{curUsr.name}}</h2>
+                <p>{{curUsr.tel}} </p>
+                <i class="icon  ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <!--<ion-item class="item-remove-animate item-icon-left item-icon-right" href="#/mySteps">
+                <i class="icon ion-aperture "></i>
+                重新训练
+                <i class="icon  ion-chevron-right icon-accessory"></i>
+            </ion-item>-->
+            <ion-item class="item-remove-animate item-icon-left item-icon-right" href="#/subjects">
+                <i class="icon ion-ios-people "></i>
+                测试对象
+                <i class="icon  ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <!--<ion-toggle ng-model="usageStats.isOn" ng-change="onSwitchChange()">
+                app使用情况权限设置
+            </ion-toggle>-->
+
+            <ion-item class="item item-input">
+                <span class="input-label">时间窗口(秒)：</span>
+                <input type="number" placeholder="4" ng-model="settings.windowLength" style="text-align:center;border:1px solid gray">
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">采样频率(HZ)：</span>
+                <input type="number" placeholder="64" ng-model="settings.hz" style="text-align:center;border:1px solid gray">
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">样本单元(次)：</span>
+                <input type="number" placeholder="128" ng-model="settings.windowSize" style="text-align:center;border:1px solid gray">
+            </ion-item>
+            <ion-item class="item item-input">
+                <span class="input-label">采集延时(秒)：</span>
+                <input type="number" placeholder="5" ng-model="settings.delay" style="text-align:center;border:1px solid gray">
+            </ion-item>
+            <ion-item>
+                <button class="button button-assertive" ng-click="saveSettings()">保存设置</button>
+            </ion-item>
+        </ion-list>
+        <div class="padding">
+            <button class="button button-block button-assertive" ng-click="logout()" on-swipe-left="goLogin()">
+                退出账号
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

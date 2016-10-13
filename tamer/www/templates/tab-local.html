@@ -1,0 +1,72 @@
+﻿<meta charset="utf-8">
+<ion-view view-title="采样记录">
+    <ion-nav-bar class="bar-dark" align-title="center">
+        <ion-nav-buttons side="left">
+            <button class="button icon button-clear ion-search" ng-click="jumpTo()"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button icon button-clear ion-upload" ng-click="uploadAll()" ng-disabled="uploadDisabled"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content scroll="false" on-swipe-left="getRec(1)" on-swipe-right="getRec(-1)">
+        <ion-list class="list" >
+            <ion-item class="item item-input">
+                对象：{{rec.name}},{{rec.sex}},{{rec.age}},{{rec.height}}cm,{{rec.weight}}kg
+            </ion-item>
+            <ion-item class="item item-input">
+                行为：{{rec.act}} @ {{rec.interval}}ms
+            </ion-item>
+            <ion-item class="item item-input">
+                来源：{{rec.position}} @ {{rec.source}}
+            </ion-item>
+            <ion-item class="item item-input">
+                时间：{{timeString}}
+            </ion-item>
+            <ion-item class="item item-input">
+                <!--i:min X:max, C: mcr D:dev  P:spp--> 
+                特征：[{{rec.params.min | number : 1}},{{rec.params.max | number : 1}}] X={{rec.params.mcr | number : 1}} D={{rec.params.dev | number : 3}} M={{rec.params.mean | number : 3}}
+            </ion-item>
+            <ion-item class="item item-input">
+                <!--i:min X:max, C: mcr D:dev  P:spp-->
+                特征：P={{rec.params.spp}} T={{rec.params.entropy | number : 3}} E={{rec.params.energy | number : 3}} C={{rec.params.centroid | number : 2}}
+            </ion-item>
+            <ion-item class="item item-input">
+                编号:{{rec.id}}   说明:{{rec.note}}
+            </ion-item>
+            
+        </ion-list>
+
+        <!--<ion-scroll zooming="false" direction="x" style="width: 500px; height: 240px">-->
+            <canvas
+                    height=140
+                    class="chart chart-line"
+                    chart-data="rec.data"
+                    chart-labels="chart.labels"
+                    chart-legend="false"
+                    chart-series="chart.series"
+                    chart-options="chart.options2"
+                    chart-colours="chart.colours"
+                    style="background-color:rgb(24,152,197)">
+            </canvas>
+        <canvas id="slide"
+                height=120
+                class="chart chart-line"
+                chart-data="rec.fft"
+                chart-labels="chart.labels2"
+                chart-legend="false"
+                chart-series="chart.series"
+                chart-options="chart.options2"
+                chart-colours="chart.colours"
+                style="background-color:rgb(144,22,184)"></canvas>
+        <p ng-bind="tag"></p>
+        <p ng-bind="err"></p>
+        <!--</ion-scroll>-->
+    </ion-content>
+    <div class="bar bar-footer sub-footer">
+        <div class="row">
+            <button class="col button button-energized "  ng-click="getRec(-1)">上一条</button>
+            <button class="col button button-assertive" ng-click="delete(rec.id)">删除</button>
+            <button class="col button button-energized " ng-click="getRec(1)">下一条</button>
+        </div>
+    </div>
+</ion-view>

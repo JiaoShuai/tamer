@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget defaultlocale="en-US" id="com.lovearthstudio.tamer" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="AppList">
+        <param name="android-package" value="com.lovearthstudio.applist.AppList" />
+    </feature>
+    <feature name="Cells">
+        <param name="android-package" value="com.lovearthstudio.cells.Cells" />
+    </feature>
+    <feature name="NativeSettings">
+        <param name="android-package" value="com.phonegap.plugins.nativesettings.NativeSettings" />
+    </feature>
+    <feature name="WifiWizard">
+        <param name="android-package" value="com.pylonproducts.wifiwizard.WifiWizard" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="AppVersion">
+        <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SQLitePlugin">
+        <param name="android-package" value="io.sqlc.SQLitePlugin" />
+    </feature>
+    <feature name="UbilibPlugin">
+        <param name="android-package" value="com.ydcun.ivita.util.UbilibPlugin" />
+    </feature>
+    <feature name="Accelerometer">
+        <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+    </feature>
+    <feature name="BLE">
+        <param name="android-package" value="com.megster.cordova.ble.central.BLECentralPlugin" />
+    </feature>
+    <icon density="ldpi" src="res/icons/android/icon-36-ldpi.png" />
+    <icon density="mdpi" src="res/icons/android/icon-48-mdpi.png" />
+    <icon density="hdpi" src="res/icons/android/icon-72-hdpi.png" />
+    <icon density="xhdpi" src="res/icons/android/icon-96-xhdpi.png" />
+    <splash density="land-hdpi" src="res/screens/android/screen-hdpi-landscape.png" />
+    <splash density="land-ldpi" src="res/screens/android/screen-ldpi-landscape.png" />
+    <splash density="land-mdpi" src="res/screens/android/screen-mdpi-landscape.png" />
+    <splash density="land-xhdpi" src="res/screens/android/screen-xhdpi-landscape.png" />
+    <splash density="port-hdpi" src="res/screens/android/screen-hdpi-portrait.png" />
+    <splash density="port-ldpi" src="res/screens/android/screen-ldpi-portrait.png" />
+    <splash density="port-mdpi" src="res/screens/android/screen-mdpi-portrait.png" />
+    <splash density="port-xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />
+    <name>驯兽师</name>
+    <description>A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone.</description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">Apache Cordova Team </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <vs:features />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="windows-target-version" value="8.1" />
+    <preference name="windows-phone-target-version" value="8.1" />
+    <preference name="KeepRunning" value="False" />
+    <preference name="ShowTitle" value="False" />
+    <preference name="InAppBrowserStorageEnabled" value="False" />
+    <preference name="SuppressesIncrementalRendering" value="False" />
+    <preference name="Fullscreen" value="True" />
+    <preference name="Orientation" value="portrait" />
+    <vs:plugin name="cordova-plugin-app-version" src="https://github.com/whiteoctober/cordova-plugin-app-version.git" version="0.1.8" />
+    <vs:plugin name="cordova-plugin-device" version="1.1.1" />
+    <vs:plugin name="cordova-plugin-network-information" version="1.2.0" />
+    <vs:plugin name="cordova-plugin-splashscreen" version="3.1.0" />
+    <vs:plugin name="cordova-plugin-whitelist" version="1.2.1" />
+    <vs:plugin name="com.pylonproducts.wifiwizard" src="https://github.com/parsonsmatt/WifiWizard.git" version="0.2.11" />
+    <vs:plugin name="cordova-plugin-geolocation" version="2.1.0" />
+    <vs:plugin name="cordova-sqlite-storage" src="https://github.com/litehelpers/Cordova-sqlite-storage" version="0.8.4-dev" />
+    <vs:plugin name="com.lovearthstudio.applist" src="https://github.com/lovearthhome/cordova-plugin-applist.git" version="0.0.1" />
+    <vs:plugin name="com.lovearthstudio.cells" src="https://github.com/lovearthhome/cordova-plugin-cells.git" version="0.0.1" />
+    <vs:plugin name="cordova-plugin-ble-central" src="https://github.com/don/cordova-plugin-ble-central.git" version="1.0.4" />
+    <vs:plugin name="com.phonegap.plugins.nativesettingsopener" src="https://github.com/selahssea/Cordova-open-native-settings" version="1.0" />
+    <vs:plugin name="cordova-plugin-ubilib" src="C:\Users\admin\Desktop\cordova-plugin-ubilib" version="0.0.1" />
+    <vs:plugin name="cordova-plugin-device-motion" version="1.2.1" />
+</widget>
